@@ -3,8 +3,9 @@
 <!-- onselectstart="return false" 禁止页面复制-->
 <head lang="en">
     /*onselectstart="return false"*/
-    <meta charset="UTF-8">
     <title>冯艳瑞</title>>
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
     <style type="text/css">
 			*{ margin:0; padding:0;}
 			body{
@@ -57,16 +58,11 @@
 <body>
     
 
-<audio id="audiojs" src="悸北 - 一百万个可能 (Live).mp3" controls="controls"  autoplay="autoplay" loop="loop" >
+<audio  src="悸北 - 一百万个可能 (Live).mp3" controls="controls"  autoplay="autoplay" loop="loop" >
     Your browser does not support the audio element.
 </audio>
 
-<!-- $(function(){
 
-$("#audio")[0].play();
-
-})
- -->
 <div id="perspective">
 <div id='wrap'>
 	<img src="img/psb.jpg" />
@@ -83,29 +79,6 @@ $("#audio")[0].play();
 <p></p>
 </div>
 </div>
-
-
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function () {
-      function audioAutoPlay() {
-          var audio = document.getElementById('audiojs');
-              audio.play();
-          document.addEventListener("WeixinJSBridgeReady", function () {
-              audio.play();
-          }, false);
-      }
-      audioAutoPlay();
-  });
- 
-    if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
-      $(document).one('touchstart',
-        function(e) {
-            $('#audiojs').get(0).touchstart = true;
-            $('#audiojs').get(0).play();
-            return false;
-        });
-    }
-</script>
 
   <script type="text/javascript">
 			window.onload = function(){
