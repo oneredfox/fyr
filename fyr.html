@@ -65,17 +65,17 @@
 
 <div id="perspective">
 <div id='wrap'>
-	<img src="img/psb.jpg" />
+	<img src="img/psb1.jpg" />
 <img src="img/psb1.jpg" />
-<img src="img/psb2.jpg" />
-<img src="img/psb3.jpg" />
-<img src="img/psb4.jpg" />
-<img src="img/psb5.jpg" />
-<img src="img/psb6.jpg" />
-<img src="img/psb7.jpg" />
-<img src="img/psb8.jpg" />
-<img src="img/psb9.jpg" />
-<img src="img/psb10.jpg" />
+<img src="img/psb1.jpg" />
+<img src="img/psb1.jpg" />
+<img src="img/psb1.jpg" />
+<img src="img/psb1.jpg" />
+<img src="img/psb1.jpg" />
+<img src="img/psb1.jpg" />
+<img src="img/psb1.jpg" />
+<img src="img/psb1.jpg" />
+<img src="img/psb1.jpg" />
 <p></p>
 </div>
 </div>
@@ -186,22 +186,22 @@
 					
 					document.ontouchstart = function(ev){
 										
-										ev = evtouches[0];
+										ev = ev || window.event;
+					
+					window.alert(ev);
 					
 										//鼠标按下的时候，给前一点坐标赋值，为了避免第一次相减的时候出错
-										lastX = ev.pageX;
-										lastY = ev.pageY;
+										lastX = ev.tous;
+										lastY = ev.clientY;
 										
 										//移动
 					// 					this
-					
-									var move = 'onmousemove' in document ? 'onmousemove' : 'ontouchmove' ;
-					
-										this.onmousemove = function(ev){
+										
+										this.ontouchmove = function(ev){
 											
 											
 											
-											ev = evtouches[0];
+											ev = ev || window.event;
 					
 											clearInterval( timer );
 					
@@ -233,7 +233,7 @@
 										//抬起
 										this.ontouchend = function(){
 											
-											this.onmousemove = null;
+											this.ontouchmove = null;
 											timer = setInterval(function(){
 												minusX *= 0.95;
 												minusY *= 0.95;
