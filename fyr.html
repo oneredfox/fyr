@@ -186,9 +186,10 @@
 					
 					document.ontouchstart = function(ev){
 										
+										window.alert(ontouchstart);
+										
 										ev = ev || window.event;
 					
-					window.alert(ev);
 					
 										//鼠标按下的时候，给前一点坐标赋值，为了避免第一次相减的时候出错
 										lastX = ev.tous;
