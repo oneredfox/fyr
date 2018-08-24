@@ -58,7 +58,7 @@
 <body>
     
 
-<audio id="audios" src="悸北 - 一百万个可能 (Live).mp3" controls="controls" loop="loop" >
+<audio id="audiojs" src="悸北 - 一百万个可能 (Live).mp3" controls="controls" loop="loop" >
     Your browser does not support the audio element.
 </audio>
 
@@ -255,10 +255,27 @@
 									}
 				}
 			
-			var audio = document.getElementById("audios");
-			audio.play();
-				
 			}
+			
+			 document.addEventListener('DOMContentLoaded', function () {
+      function audioAutoPlay() {
+          var audio = document.getElementById('audiojs');
+              audio.play();
+          document.addEventListener("WeixinJSBridgeReady", function () {
+              audio.play();
+          }, false);
+      }
+      audioAutoPlay();
+  });
+ 
+    if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
+      $(document).one('touchstart',
+        function(e) {
+            $('#audiojs').get(0).touchstart = true;
+            $('#audiojs').get(0).play();
+            return false;
+        });
+    }
 
 		</script>
 </body>
