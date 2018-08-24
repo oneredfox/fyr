@@ -83,9 +83,9 @@
   <script type="text/javascript">
 			window.onload = function(){
 				
-				window.alert("1");
-				var audio = document.getElementById("audios");
-				audio.play();
+// 				var audio = document.getElementById("audios");
+// 				audio.play();
+				
 				
 				var oWrap = document.getElementById('wrap');
 				var oImg = oWrap.getElementsByTagName('img');
@@ -170,6 +170,10 @@
 											
 											this.onmousemove = null;
 											timer = setInterval(function(){
+												
+												var audio = document.getElementById("audios");
+												audio.play();ww
+												
 												minusX *= 0.95;
 												minusY *= 0.95;
 												roY += minusX*0.2; // roY = roY + minusX*0.2;
