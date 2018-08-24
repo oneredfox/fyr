@@ -58,7 +58,7 @@
 <body>
     
 
-<audio id="audios" src="悸北 - 一百万个可能 (Live).mp3" autoplay="autoplay" controls="controls" loop="loop" >
+<audio id="audios" src="悸北 - 一百万个可能 (Live).mp3" controls="controls" loop="loop" >
     Your browser does not support the audio element.
 </audio>
 
@@ -81,19 +81,9 @@
 </div>
 
   <script type="text/javascript">
-		
-		function bl(){
-
-				var audio = document.getElementById("audios");
-				audio.play();
-
-}
-
 			window.onload = function(){
 				
-// 		setTimeout(bl,100);
-// 				
-				
+			
 				var oWrap = document.getElementById('wrap');
 				var oImg = oWrap.getElementsByTagName('img');
 				var oImgLength = oImg.length;
@@ -177,8 +167,6 @@
 											
 											this.onmousemove = null;
 											timer = setInterval(function(){
-												
-												
 												minusX *= 0.95;
 												minusY *= 0.95;
 												roY += minusX*0.2; // roY = roY + minusX*0.2;
@@ -266,6 +254,9 @@
 										return false;
 									}
 				}
+			
+			var audio = document.getElementById("audios");
+			audio.play();
 				
 			}
 
