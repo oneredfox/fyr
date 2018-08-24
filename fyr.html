@@ -58,7 +58,7 @@
 <body>
     
 
-<audio  src="悸北 - 一百万个可能 (Live).mp3" controls="controls"  autoplay="autoplay" loop="loop" >
+<audio id="audios" src="悸北 - 一百万个可能 (Live).mp3" controls="controls" loop="loop" >
     Your browser does not support the audio element.
 </audio>
 
@@ -82,6 +82,10 @@
 
   <script type="text/javascript">
 			window.onload = function(){
+				
+				var audio = document.createElement("audios");
+				audio.play();
+				
 				var oWrap = document.getElementById('wrap');
 				var oImg = oWrap.getElementsByTagName('img');
 				var oImgLength = oImg.length;
@@ -113,7 +117,8 @@
 				if ('onmousedown' in document) {
 					
 					document.onmousedown = function(ev){
-																				
+										
+										
 										ev = ev || window.event;
 					
 										//鼠标按下的时候，给前一点坐标赋值，为了避免第一次相减的时候出错
@@ -123,6 +128,7 @@
 										//移动
 					// 					this
 					
+									var move = 'onmousemove' in document ? 'onmousemove' : 'ontouchmove' ;
 					
 					 					this.onmousemove = function(ev){
 											
@@ -181,22 +187,10 @@
 									
 									
 				} else{
-					
-                    for ( var i=0;i<oImgLength;i++ )
-                    {
-                       
-                        oImg[i].ontouchstart =function() {
-                            this.style.backgroundColor ="red";
-                            window.alert("ontouchstart");
-                        };
-                    }
-
+							
 					document.ontouchstart = function(ev){
 										
-										window.alert(ontouchstart);
-										
 										ev = ev || window.event;
-					
 					
 										//鼠标按下的时候，给前一点坐标赋值，为了避免第一次相减的时候出错
 										lastX = ev.tous;
@@ -204,8 +198,10 @@
 										
 										//移动
 					// 					this
-										
-										this.ontouchmove = function(ev){
+					
+									var move = 'onmousemove' in document ? 'onmousemove' : 'ontouchmove' ;
+					
+										this.onmousemove = function(ev){
 											
 											
 											
@@ -239,9 +235,10 @@
 					
 										}
 										//抬起
-										this.ontouchend = function(){
+										var move = 'ontouchend' in document ? 'ontouchend' : 'onmouseup' ;
+										this.onmouseup = function(){
 											
-											this.ontouchmove = null;
+											this.onmousemove = null;
 											timer = setInterval(function(){
 												minusX *= 0.95;
 												minusY *= 0.95;
